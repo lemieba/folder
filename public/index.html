@@ -1,47 +1,71 @@
-<!DOCTYPE html>
+<!DOCTYPE <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>I was here!</title>
-    <style media="screen">
-      body {
-        font-family: Roboto, Arial, sans-serif;
-        background: #ECEFF1;
-        color: rgba(0,0,0,0.87);
-      }
+<head>
+  <title>Let-US | login</title>
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+    <style type="text/css">
+    /* Credit to bootsnipp.com for the css for the color graph */
+.colorgraph {
+  height: 5px;
+  border-top: 0;
+  background: #c4e17f;
+  border-radius: 5px;
+  background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+}
+    </style>
+</head>
+<body>
+<center>
+<div class="container">
+<div class="row" style="margin-top:20px">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+    <form role="form">
+      <fieldset>
+        <h2>Welcome to Let-Us !</h2>
+        <hr class="colorgraph">
+        <div class="form-group">
+                    <input type="name" name="name" id="name" class="form-control input-lg" placeholder="username">
+        </div>
+        <div class="form-group">
+                    <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password">
+        </div>
+        <span class="button-checkbox">
+          
+        </span>
+        <hr class="colorgraph">
+        <div class="row">
+          <div class="col-xs-6 col-sm-6 col-md-6">
+                        <input id="sign-in"
+                        type="submit" class="btn btn-lg btn-success btn-block" value="Sign In" onclick="logIn()">
+            <input id="join" 
+            type="submit" class="btn btn-lg btn-success btn-block" value="Join Us!" onclick="newUser()">
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>
+</center>
+<script type="text/javascript">
+        
 
-      a {
-        color: rgb(3,155,229);
-      }
+    function logIn(){
+      //validate user
+      window.open('homepage.html');
 
-      #message {
-        max-width: 400px;
-        margin: 40px auto;
-        box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2),0 1px 1px 0 rgba(0,0,0,0.14),0 2px 1px -1px rgba(0,0,0,0.12);
-        border-radius: 2px;
-        background: white;
-        padding: 16px 24px;
-      }
+    }
 
-      #message h1 {
-        font-size: 22px;
-        font-weight: 500;
-        text-align: center;
-        margin: 0 0 16px;
-      }
+    function newUser(){
+      window.open("newUser.html");
+    }
+       
+</script>
 
-      #message p {
-        font-weight: 300;
-        line-height: 150%;
-      }
-
-      #message ul {
-        list-style: none;
-        margin: 16px 0 0;
-        padding: 0;
-        text-align: center;
-      }
-
+<<<<<<< Updated upstream
       #message li a {
         display: inline-block;
         padding: 8px;
@@ -67,4 +91,8 @@
       </ul>
     </div>
   </body>
+=======
+</div>
+</body>
+>>>>>>> Stashed changes
 </html>
