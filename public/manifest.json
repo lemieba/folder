@@ -1,0 +1,39 @@
+{
+  "name": "Notes",
+  "scope": "./",
+  "start_url": "index.html",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#9C27B0",
+  "background_color": "#9C27B0",
+   "icons": [{
+    "src": "images/lettuceimage.jpg",
+    "sizes": "36x36",
+    "type": "image/jpg"
+  },
+  {
+    "src": "lettuceimage.jpg",
+    "sizes": "48x48",
+    "type": "image/jpg"
+  },
+  {
+    "src": "lettuceimage.jpg",
+    "sizes": "72x72",
+    "type": "image/jpgs"
+  },
+  {
+    "src": "lettuceimage.jpg",
+    "sizes": "96x96",
+    "type": "image/jpg"
+  },
+  {
+    "src": "lettuceimage.jpg",
+    "sizes": "144x144",
+    "type": "image/jpg"
+  },
+  {
+    "src": "lettuceimage.jpg",
+    "sizes": "192x192",
+    "type": "image/jpg"
+  }]
+}
