@@ -3,7 +3,7 @@
 <head>
   <title>Let-US | login</title>
   <link rel="stylesheet" type="text/css" href="main.css">
-
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
   <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
     <style type="text/css">
     /* Credit to bootsnipp.com for the css for the color graph */
@@ -18,21 +18,48 @@
   background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
 }
     </style>
+    <script>
+      function newUSer(){
+      window.open("newUSer.html");
+    }
+
+      function logIn(){
+          var email = document.getElementById("email").value;
+          var password = document.getElementById("password").value;
+          //window.location.href = "homepage.html";
+          console.log(0);
+      
+      firebase.auth().signInWithEmailAndPassword(email, password).then(function(user){
+        console.log("Hello!");
+        window.open("homepage.html");
+        
+      }, function(error) {
+          // Handle Errors here
+          console.log(error);
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          console.log(errorMessage);
+      });
+      
+          
+    }
+   
+    </script>
 </head>
 <body>
 <center>
 <div class="container">
 <div class="row" style="margin-top:20px">
     <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-    <form role="form">
+    <form role="form" method="POST">
       <fieldset>
         <h2>Welcome to Let-Us !</h2>
         <hr class="colorgraph">
         <div class="form-group">
-                    <input type="name" name="name" id="name" class="form-control input-lg" placeholder="username">
+                    <input type="email" name="email" id="email" class="form-control input-lg" placeholder="email">
         </div>
         <div class="form-group">
-                    <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password">
+                    <input type="password" name="password" id="password" class="form-control input-lg" placeholder="password">
         </div>
         <span class="button-checkbox">
           
@@ -51,21 +78,19 @@
   </div>
 </div>
 </center>
-<script type="text/javascript">
-        
+  <script src="https://www.gstatic.com/firebasejs/3.5.3/firebase.js"></script>
+  <script>
+  // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyA7sVoIP0S-wA96Psf16plGFasqKPiUUF4",
+            authDomain: "basic-add1a.firebaseapp.com",
+            databaseURL: "https://basic-add1a.firebaseio.com",
+            storageBucket: "basic-add1a.appspot.com",
+            messagingSenderId: "577572018950"
+        };
+        firebase.initializeApp(config);
+  </script>
 
-    function logIn(){
-      //validate user
-      window.open('homepage.html');
-
-    }
-
-    function newUSer(){
-      window.open("newUSer.html");
-    }
-       
-</script>
-<script type="text/javascript" src="registration.js"></script>
 
 </body>
 
