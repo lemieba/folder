@@ -1,97 +1,112 @@
-<!DOCTYPE <!DOCTYPE html>
-<html>
-<head>
-  <title>Let-US | login</title>
-  <link rel="stylesheet" type="text/css" href="main.css">
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-  <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
-    <style type="text/css">
-    /* Credit to bootsnipp.com for the css for the color graph */
-.colorgraph {
-  height: 5px;
-  border-top: 0;
-  background: #c4e17f;
-  border-radius: 5px;
-  background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-  background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-  background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-  background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-}
-    </style>
-    <script>
-      function newUSer(){
-      window.open("newUSer.html");
-    }
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- <link rel="icon" href="favicon.ico"> -->
 
-      function logIn(){
-          var email = document.getElementById("email").value;
-          var password = document.getElementById("password").value;
-          //window.location.href = "homepage.html";
-          console.log(0);
-      
-      firebase.auth().signInWithEmailAndPassword(email, password).then(function(user){
-        console.log("Hello!");
-        window.open("homepage.html");
-        
-      }, function(error) {
-          // Handle Errors here
-          console.log(error);
-          var errorCode = error.code;
-          var errorMessage = error.message;
-          console.log(errorMessage);
-      });
-      
-          
-    }
-   
-    </script>
-</head>
-<body>
-<center>
-<div class="container">
-<div class="row" style="margin-top:20px">
-    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-    <form role="form" method="POST">
-      <fieldset>
-        <h2>Welcome to Let-Us !</h2>
-        <hr class="colorgraph">
-        <div class="form-group">
-                    <input type="email" name="email" id="email" class="form-control input-lg" placeholder="email">
+    <title>Fixed Top Navbar Example for Bootstrap</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href= "index.css">
+
+    <!-- Custom styles for this template -->
+    <!-- <link href="navbar-fixed-top.css" rel="stylesheet"> -->
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">LETTUS</a>
+
         </div>
-        <div class="form-group">
-                    <input type="password" name="password" id="password" class="form-control input-lg" placeholder="password">
-        </div>
-        <span class="button-checkbox">
-          
-        </span>
-        <hr class="colorgraph">
-        <div class="row">
-          <div class="col-xs-6 col-sm-6 col-md-6">
-                        <input id="sign-in"
-                        type="submit" class="btn btn-lg btn-success btn-block" value="Sign In" onclick="logIn()">
-            <input id="join" 
-            type="submit" class="btn btn-lg btn-success btn-block" value="Join Us!" onclick="newUSer()">
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#filters">Filters</a></li>
+            <li><a href="#messages">Messages</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+
+          </ul>
+
+          <p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link">Lemi Eba</a></p>
+          <ul class="nav navbar-nav navbar-right">
+
+            <!-- <li><a href="../navbar/">Default</a></li>
+            <li><a href="../navbar-static-top/">Static top</a></li>
+            <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="card-panels">
+
+
+
+
+        <div class="panel panel-warning">
+          <div class="panel-heading" size="10">Lemi Eba</div>
+          <div class="panel-body">
+            <p>Any one up for playing tennis. I got rackets</p>
           </div>
         </div>
-      </fieldset>
-    </form>
-  </div>
-</div>
-</center>
-  <script src="https://www.gstatic.com/firebasejs/3.5.3/firebase.js"></script>
-  <script>
-  // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyA7sVoIP0S-wA96Psf16plGFasqKPiUUF4",
-            authDomain: "basic-add1a.firebaseapp.com",
-            databaseURL: "https://basic-add1a.firebaseio.com",
-            storageBucket: "basic-add1a.appspot.com",
-            messagingSenderId: "577572018950"
-        };
-        firebase.initializeApp(config);
-  </script>
 
 
-</body>
 
+        <div class="panel panel-warning">
+          <div class="panel-heading" size="10">Denise Buliga</div>
+          <div class="panel-body">
+            <p>any one want to got share an uber to the walmart</p>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+  </body>
 </html>
