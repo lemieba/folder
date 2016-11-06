@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:5000/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>Sign-In</title>
+  <script src="./Sign-In_files/firebase.js"></script>
+  <script src="./Sign-In_files/jquery.min.js"></script>
+  <script type="text/javascript" src="./Sign-In_files/firebase(1).js"></script>
+</head>
+<body>
+  <script>
+  function logIn(){
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    //window.location.href = "homepage.html";
+    console.log(0);
+
+    firebase.auth().signInWithEmailAndPassword(email, password).then(function(user){
+      console.log("Hello!");
+      window.open("homepage.html");
+
+    }, function(error) {
+      // Handle Errors here
+      console.log(error);
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log(errorMessage);
+    });
+  }
+  </script>
+
+  <form onsubmit="logIn()">
+    Email:<br>
+    <input type="text" id="email" placeholder="email">
+    <br>
+    Password:<br>
+    <input type="password" id="password" placeholder="password">
+    <br><br>
+    <input type="submit" value="Sign-In">
+  </form>
+  <p>If you are a new user, please <a href="http://localhost:5000/sign-up.html">Sign up</a>.</p>
+
+<script src="./Sign-In_files/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyC86NAyDfBmZJVRChOlkomD_detacv3KrE",
+    authDomain: "sign-in-de19f.firebaseapp.com",
+    databaseURL: "https://sign-in-de19f.firebaseio.com",
+    storageBucket: "sign-in-de19f.appspot.com",
+    messagingSenderId: "342219877107"
+  };
+  firebase.initializeApp(config);
+</script>
+
+
+
+</body></html>
