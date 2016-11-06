@@ -1,0 +1,64 @@
+<html>
+<head>
+
+  <style>
+    body {
+      max-width: 100%;
+    }
+
+    ul#chat-buffer {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul#chat-buffer li:nth-child(odd) {
+      background-color: #c6ffb3;
+    }
+
+    .bubble{
+    background-color: #F2F2F2;
+    border-radius: 5px;
+    box-shadow: 0 0 6px #B2B2B2;
+    display: inline-block;
+    padding: 10px 18px;
+
+  </style>
+  <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="https://cdn.firebase.com/js/client/2.1.1/firebase.js"></script>
+  <script>
+    $(document).ready(function () {
+      var chat_name = window.location.hash || 'default';
+      if (chat_name.startsWith("#")){
+       chat_name = chat_name.substring(1);
+      }
+      var ref = new Firebase("https://chat-200f1.firebaseio.com/");
+      $("#send").click(function () {
+        var username = $("#username").val();
+        var message = $("#message").val();
+
+        ref.child("chat_channels").child(chat_name).push({
+          username: username,
+          message: message
+        });
+      });
+
+      ref.child("chat_channels").child(chat_name).on("child_added", function (snapshot) {
+        var value = snapshot.val();
+        var html = $("<li/>").text(value.username + " said " + value.message);
+        $("#chat-buffer").append(html);
+      });
+    });
+
+  </script>
+</head>
+<body>
+
+<ul id="chat-buffer">
+</ul>
+
+<hr>
+<input id="username" placeholder="username" size=40% align= "center" type="text">
+<input id="message" placeholder="message" size=40% align= "center" type="text">
+<input type="submit" id="send">
+</body>
+</html>
